@@ -1,0 +1,79 @@
+/* components/TodoList.css */
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.input-card {
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-card input {
+  display: block;
+  margin: 10px 10px;
+  padding: 10px;
+  width: 220px;
+  box-sizing: border-box;
+}
+
+.input-card button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-card button:hover {
+  background-color: #218838;
+}
+.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .todo-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    width: calc(33.333% - 1rem); /* 3 items per row with space */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  .edit {
+    display: flex;
+    justify-content: flex-end;
+  }
+.edit button {
+  margin-left: 10px;
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+  
