@@ -1,37 +1,37 @@
 import React from "react";
 
-function Filter() {
+function Filter({ filterStatus }) {
   return (
     <div className="filter">
-        <div>
-            <h4>ToDo-list</h4>
-          </div>
-      <div style={{display: 'flex',alignItems: 'center'}}>
-        <h4 style={{marginRight: '10px'}}>Status Filter : </h4>
-        <div class="dropdown">
+      <div>
+        <h4>ToDo-list</h4>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h4 style={{ marginRight: '10px' }}>Status Filter : </h4>
+        <div className="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            className="btn btn-secondary dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             All
           </button>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#">
-                all
-              </a>
+              <button className="dropdown-item" onClick={() => filterStatus('all')}>
+                All
+              </button>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
+              <button className="dropdown-item" onClick={() => filterStatus('completed')}>
                 Completed
-              </a>
+              </button>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
-               Not Completed
-              </a>
+              <button className="dropdown-item" onClick={() => filterStatus('notCompleted')}>
+                Not Completed
+              </button>
             </li>
           </ul>
         </div>
@@ -41,3 +41,5 @@ function Filter() {
 }
 
 export default Filter;
+
+
