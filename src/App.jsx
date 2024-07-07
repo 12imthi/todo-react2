@@ -30,19 +30,22 @@ function App() {
   };
  
   const filterStatus = (status) => {
+    console.log('status: ', status);
     if (status === 'all') {
-      return todos;
+      setFilteredTodos(todos);
+    } else {
+      const filtered = todos.filter(todo => 
+        status === 'completed' ? todo.completed : !todo.completed
+      );
+      setFilteredTodos(filtered);
     }
-    return todos.filter(todo => 
-      status === 'completed' ? todo.completed : !todo.completed
-    );
   };
 
 
   return (
     <div className="App">
       <Input addTodo={addTodo} />
-      <Filter filterStatus={filterStatus}/>
+      <Filter filterStatus={filterStatus} todos={todos}/>
       <TodoList todos={todos}       toggleStatus={toggleStatus} />
     </div>
   );

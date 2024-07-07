@@ -1,6 +1,9 @@
 import React from "react";
 
-function Filter({ filterStatus }) {
+function Filter({ filterStatus,todos }) {
+  
+
+
   return (
     <div className="filter">
       <div>
@@ -18,21 +21,13 @@ function Filter({ filterStatus }) {
             All
           </button>
           <ul className="dropdown-menu">
-            <li>
-              <button className="dropdown-item" onClick={() => filterStatus('all')}>
-                All
-              </button>
-            </li>
-            <li>
-              <button className="dropdown-item" onClick={() => filterStatus('completed')}>
-                Completed
-              </button>
-            </li>
-            <li>
-              <button className="dropdown-item" onClick={() => filterStatus('notCompleted')}>
-                Not Completed
-              </button>
-            </li>
+          {todos.map((todo, index) => (
+              <li key={index}>
+                <button className="dropdown-item" onClick={() => filterStatus(todo.status)}>
+                  {todo.status === 'completed' ? 'Completed' : 'Not Completed'}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -41,5 +36,3 @@ function Filter({ filterStatus }) {
 }
 
 export default Filter;
-
-
