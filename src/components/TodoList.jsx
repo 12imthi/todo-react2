@@ -1,6 +1,6 @@
 import React from "react";
 
-function TodoList({ todos, toggleStatus }) {
+function TodoList({ todos, toggleStatus ,deleteClick}) {
   return (
     <div className="todo-list">
       {todos.map((todo, index) => (
@@ -30,7 +30,7 @@ function TodoList({ todos, toggleStatus }) {
             </div>
             <div className="edit">
               <button>Edit</button>
-              <button>Delete</button>
+              <button onClick={() => deleteClick(todo.id)}>Delete</button>
             </div>
           </div>
         </div>
