@@ -1,10 +1,10 @@
 import React from "react";
 
-function TodoList({ todos, toggleStatus ,deleteClick}) {
+function TodoList({ filteredTodos, toggleStatus ,deleteClick,startEdit}) {
   return (
     <div className="todo-list">
-      {todos.map((todo, index) => (
-        <div key={index} className="todo-item card">
+      {filteredTodos.map((todo, index,editData) => (
+         <div key={index} className="todo-item card">
           <div className="card-body">
             <h2 className="card-title">ToDo Name: {todo.title}</h2>
             <p className="card-text">Description: {todo.description}</p>
@@ -22,14 +22,14 @@ function TodoList({ todos, toggleStatus ,deleteClick}) {
                 <ul className="dropdown-menu">
                   <li>
                     <button className="dropdown-item" onClick={() => toggleStatus(index)}>
-                      {todo.completed ? "Mark as Not Completed" : "Mark as Completed"}
+                      {todo.completed ? " Not Completed" : " Completed"}
                     </button>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="edit">
-              <button>Edit</button>
+              <button onClick={() => startEdit(todo.id)}>Edit</button>
               <button onClick={() => deleteClick(todo.id)}>Delete</button>
             </div>
           </div>
