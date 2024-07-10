@@ -50,6 +50,7 @@ function App() {
  
   const startEdit = (id) => {
     const todoToEdit = todos.find(todo => todo.id === id);
+    console.log("todoToEdit",todoToEdit);
     setEditData(todoToEdit);
   };
   
@@ -60,7 +61,7 @@ function App() {
     );
     setTodos(updatedTodos);
     setFilteredTodos(updatedTodos);
-    setEditData(null); // Clear editData after saving
+    // setEditData(null); // Clear editData after saving
   };
   
   return (

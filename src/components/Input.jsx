@@ -6,6 +6,7 @@ function Input({ addTodo, editData, saveEdit }) {
   const [isEditMode, setIsEditMode] = useState(false);
 
   useEffect(() => {
+    console.log("editData",editData);
     if (editData) {
       setTitle(editData.title);
       setDescription(editData.description);
@@ -48,7 +49,7 @@ function Input({ addTodo, editData, saveEdit }) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button onClick={handleSaveTodo}>
+        <button onClick={handleSaveTodo}  className={`btn ${isEditMode ? 'btn-success' : 'btn-primary'}`}>
           {isEditMode ? 'Save Changes' : 'Add Todo'}
         </button>
       </div>

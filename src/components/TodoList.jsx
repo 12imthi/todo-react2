@@ -21,7 +21,7 @@ function TodoList({ filteredTodos, toggleStatus ,deleteClick,startEdit}) {
                 </button>
                 <ul className="dropdown-menu">
                   <li>
-                    <button className="dropdown-item" onClick={() => toggleStatus(index)}>
+                    <button className="dropdown-item btn btn-info" type="button"  onClick={() => toggleStatus(index)}>
                       {todo.completed ? " Not Completed" : " Completed"}
                     </button>
                   </li>
@@ -29,8 +29,8 @@ function TodoList({ filteredTodos, toggleStatus ,deleteClick,startEdit}) {
               </div>
             </div>
             <div className="edit">
-              <button onClick={() => startEdit(todo.id)}>Edit</button>
-              <button onClick={() => deleteClick(todo.id)}>Delete</button>
+              <button type="button" className="btn btn-primary" onClick={() => startEdit(todo.id)}>Edit</button>
+              <button type="button" className="btn btn-primary" onClick={() => deleteClick(todo.id)}>Delete</button>
             </div>
           </div>
         </div>
