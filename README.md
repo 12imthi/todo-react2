@@ -23,6 +23,6 @@ A simple and intuitive Todo application built with React.
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/todo-app.git
+   git clone [https://github.com/yourusername/todo-app.git](https://github.com/12imthi/todo-react2.git)
    cd todo-app
 
